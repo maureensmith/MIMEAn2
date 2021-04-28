@@ -60,7 +60,7 @@ nonselected	<unselected_barcode_2>	<sample_name_2>	<sample_id_2>]
 The parameter are explained in the former MIMEmanual.pdf, but will be updated here in the README soon. 
 
 A note regarding the sample files: 
-The dataDir has to contain the countfiles in the directories 1d and 2d. The count files contain the nucleotde (co-)occurrences of mapped reads, which can be inferred with the tool [sam2coutns](https://github.com/maureensmith/sam2counts).
+The dataDir has to contain the countfiles in the directories 1d and 2d. The countfiles contain the nucleotide (co-)occurrences of mapped reads, which can be inferred with the tool [sam2counts](https://github.com/maureensmith/sam2counts).
 The 1d and 2d count file for the respective sample is named with the respective id/barcode:
 
 ```
