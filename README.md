@@ -99,8 +99,15 @@ nonselected	6	sampleSet1	0
 selected	7	sampleSet1	2
 nonselected	8	sampleSet1	2
 ```
+In the subfolder "scripts", there is the helper R script "createMIMEProjectFiles.R" to create such a project file: 
 
-The ouput are two tables containing 1. the posisition wise maxKds and 2. the Kds for all 3 mutations, both with additional information, also described in the manual.
+```
+Rscript createMIMEProjectFiles.R <sample_sheet_file refFile> <count_dir> <result_dir> <selected_sample_name> <unselected_sample_name> <>selected_wt_sample_name> <unselected_wt_sample_name> <subdir_name>
+```
+It requires the sample sheet file, with the id ("Encoding") and sample name ("Sample") in order to fill the project file. 
+All other parameters important for the project file, are set to default values, but can be adjusted within the script.
+
+The output of MIMEAn2 are two tables containing 1. the posisition wise maxKds and 2. the Kds for all 3 mutations, both with additional information, also described in the manual.
 The according plots can be generated with the R Script here: [MIMEplot](https://github.com/maureensmith/MIMEplot)
 
 

@@ -19,7 +19,7 @@ library(seqinr)
 args = commandArgs(trailingOnly = TRUE)
 
 if(length(args) < 9) {
-  cat("\nCall the script with at least 5 arguments: sample_sheet_file refFile count_dir result_dir selected_sample_name unselected_sample_name selected_wt_sample_name unselected_wt_sample_name\n
+  cat("\nCall the script with at least 9 arguments: sample_sheet_file refFile count_dir result_dir selected_sample_name unselected_sample_name selected_wt_sample_name unselected_wt_sample_name subdir_name\n
   #terminate without saving workspace\n\n")
   quit("no")
 }
