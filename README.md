@@ -1,10 +1,12 @@
-# MIMEAnTo
+# MIMEAn2
 
-Compiling MIMEAnTo
+Originating from [MIMEAnTo](https://github.com/maureensmith/mimeanto) [[1]](#1), MIMEAn2 is the console version for analysing MIME data [[2]](#2) [[3]](#3) . It will be refactored, but the version is working as described below.
+
+Compiling MIMEAn2
 ---------------------
 To compile MIMEAnTo a compiler capable of c++20 is required.
 
-Download or clone this repository for MIMEAnTo.
+Download or clone this repository for MIMEAn2.
 Go to the directory where you want to have your program files.
 Then call:
 
@@ -14,7 +16,7 @@ make
 ```
 
 
-Running MIMEAnTo
+Running MIMEAn2
 -------------------
 
 The program is called from the command line with
@@ -100,3 +102,15 @@ nonselected	8	sampleSet1	2
 
 The ouput are two tables containing 1. the posisition wise maxKds and 2. the Kds for all 3 mutations, both with additional information, also described in the manual.
 The according plots can be generated with the R Script here: [MIMEplot](https://github.com/maureensmith/MIMEplot)
+
+
+## References
+<a id="1">[1]</a> 
+Smith, Maureen R., et al. "MIMEAnTo: profiling functional RNA in mutational interference mapping experiments." Bioinformatics 32.21 (2016): 3369-3370.
+
+<a id="2">[2]</a> 
+Smyth, Redmond P., et al. "Mutational interference mapping experiment (MIME) for studying RNA structure and function." Nature methods 12.9 (2015): 866-872.
+
+<a id="3">[3]</a> 
+Smyth, Redmond P. and Smith, Maureen R., et al. "In cell mutational interference mapping experiment (in cell MIME) identifies the 5′ polyadenylation signal as a dual regulator of HIV-1 genomic RNA production and packaging." Nucleic acids research 46.9 (2018): e57-e57.
+
