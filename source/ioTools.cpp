@@ -758,68 +758,70 @@ namespace ioTools {
                 string line;
                 while(getline(infile, line)) {
                     vector<string> splittedLine = ioTools::split(line, '\t');
-                    if(splittedLine[0] == "refSeqFile")
-                        param.refFile = splittedLine[1];
-                    else if(splittedLine[0] == "dataDir")
-                        param.dataDir = splittedLine[1];
-//                    else if(splittedLine[0] == "barcodeFile")
-//                        param.barcodeFile = splittedLine[1];
-                    else if(splittedLine[0] == "alpha")
-                        param.alpha = std::stod(splittedLine[1]);
-                    else if(splittedLine[0] == "cutValueBwd")
-                        param.cutValueBwd = std::stoi(splittedLine[1]);
-                    else if(splittedLine[0] == "cutValueFwd")
-                        param.cutValueFwd = std::stoi(splittedLine[1]);
-                    else if(splittedLine[0] == "minimumNrCalls")
-                        param.minimumNrCalls = std::stoi(splittedLine[1]);
-                    else if(splittedLine[0] == "minNumberEstimatableKds")
-                        param.minNumberEstimatableKDs = std::stoi(splittedLine[1]);
-                    else if(splittedLine[0] == "minSignal2NoiseStrength")
-                        param.minSignal2NoiseStrength = std::stod(splittedLine[1]);
-                    else if(splittedLine[0] == "minMutRate")
-                        param.minMutRate = std::stod(splittedLine[1]);
-                    else if(splittedLine[0] == "seqBegin")
-                        param.seqBegin = std::stoi(splittedLine[1]);
-                    else if(splittedLine[0] == "seqEnd")
-                        param.seqEnd = std::stoi(splittedLine[1]);
-                    else if(splittedLine[0] == "percOfMaxCov")
-                        param.weightThreshold = std::stod(splittedLine[1]);
-                    else if(splittedLine[0] == "joinErrors")
-                         std::istringstream(splittedLine[1]) >> std::boolalpha >> param.joinErrors;
-                    else if(splittedLine[0] == "plotYAxisFrom")
-                        param.plotYAxisFrom = std::stod(splittedLine[1]);
-                    else if(splittedLine[0] == "plotYAxisTo")
-                        param.plotYAxisTo = std::stod(splittedLine[1]);
-                    else if(splittedLine[0] == "plotStartRegion")
-                        param.plotStartRegion = std::stoi(splittedLine[1]);
-                    else if(splittedLine[0] == "plotEndRegion")
-                        param.plotEndRegion = std::stoi(splittedLine[1]);
-                    else if(splittedLine[0] == "selected")
-                    {
-                        utils::Sample sample(splittedLine[2], std::stoi(splittedLine[1]), utils::BOUND, std::stoi(splittedLine[3]));
-                        data.bound.insert(sample);
-                    } else if(splittedLine[0] == "nonselected")
-                    {
-                        utils::Sample sample(splittedLine[2], std::stoi(splittedLine[1]), utils::UNBOUND, std::stoi(splittedLine[3]));
-                        data.unbound.insert(sample);
-                    }else if(splittedLine[0] == "signThreshold") {
-                        param.significanceThreshold = std::stod(splittedLine[1]);
+                    if(splittedLine.size() >= 2) {
+                        if (splittedLine[0] == "refSeqFile")
+                            param.refFile = splittedLine[1];
+                        else if (splittedLine[0] == "dataDir")
+                            param.dataDir = splittedLine[1];
+                            //                    else if(splittedLine[0] == "barcodeFile")
+                            //                        param.barcodeFile = splittedLine[1];
+                        else if (splittedLine[0] == "alpha")
+                            param.alpha = std::stod(splittedLine[1]);
+                        else if (splittedLine[0] == "cutValueBwd")
+                            param.cutValueBwd = std::stoi(splittedLine[1]);
+                        else if (splittedLine[0] == "cutValueFwd")
+                            param.cutValueFwd = std::stoi(splittedLine[1]);
+                        else if (splittedLine[0] == "minimumNrCalls")
+                            param.minimumNrCalls = std::stoi(splittedLine[1]);
+                        else if (splittedLine[0] == "minNumberEstimatableKds")
+                            param.minNumberEstimatableKDs = std::stoi(splittedLine[1]);
+                        else if (splittedLine[0] == "minSignal2NoiseStrength")
+                            param.minSignal2NoiseStrength = std::stod(splittedLine[1]);
+                        else if (splittedLine[0] == "minMutRate")
+                            param.minMutRate = std::stod(splittedLine[1]);
+                        else if (splittedLine[0] == "seqBegin")
+                            param.seqBegin = std::stoi(splittedLine[1]);
+                        else if (splittedLine[0] == "seqEnd")
+                            param.seqEnd = std::stoi(splittedLine[1]);
+                        else if (splittedLine[0] == "percOfMaxCov")
+                            param.weightThreshold = std::stod(splittedLine[1]);
+                        else if (splittedLine[0] == "joinErrors")
+                            std::istringstream(splittedLine[1]) >> std::boolalpha >> param.joinErrors;
+                        else if (splittedLine[0] == "plotYAxisFrom")
+                            param.plotYAxisFrom = std::stod(splittedLine[1]);
+                        else if (splittedLine[0] == "plotYAxisTo")
+                            param.plotYAxisTo = std::stod(splittedLine[1]);
+                        else if (splittedLine[0] == "plotStartRegion")
+                            param.plotStartRegion = std::stoi(splittedLine[1]);
+                        else if (splittedLine[0] == "plotEndRegion")
+                            param.plotEndRegion = std::stoi(splittedLine[1]);
+                        else if (splittedLine[0] == "selected" && splittedLine.size() >= 4) {
+                            utils::Sample sample(splittedLine[2], std::stoi(splittedLine[1]), utils::BOUND,
+                                                 std::stoi(splittedLine[3]));
+                            data.bound.insert(sample);
+                        } else if (splittedLine[0] == "nonselected" && splittedLine.size() >= 4) {
+                            utils::Sample sample(splittedLine[2], std::stoi(splittedLine[1]), utils::UNBOUND,
+                                                 std::stoi(splittedLine[3]));
+                            data.unbound.insert(sample);
+                        } else if (splittedLine[0] == "signThreshold") {
+                            param.significanceThreshold = std::stod(splittedLine[1]);
+                        }
+
+
+                            //                    else if(splittedLine[0] == "fullPlot")
+                            //                        std::istringstream(splittedLine[1]) >> std::boolalpha >> param.fullPlot;
+                            //param.fullPlot = splittedLin[1];
+                            //                    else if(splittedLine[0] == "generateOutput")
+                            //                        std::istringstream(splittedLine[1]) >> std::boolalpha >> param.generateOutput;
+                            //param.refFile = splittedLin[1];
+                            //                    else if(splittedLine[0] == "putMedian")
+                            //                        std::istringstream(splittedLine[1]) >> std::boolalpha >> param.putMedian;
+                            //param.refFile = splittedLin[1];
+                            //                    else if(splittedLine[0] == "summaryPlot")
+                            //                        std::istringstream(splittedLine[1]) >> std::boolalpha >> param.summaryPlot;
+                        else if (splittedLine[0] == "virion")
+                            std::istringstream(splittedLine[1]) >> std::boolalpha >> param.virion;
                     }
-
-
-//                    else if(splittedLine[0] == "fullPlot")
-//                        std::istringstream(splittedLine[1]) >> std::boolalpha >> param.fullPlot;
-                        //param.fullPlot = splittedLin[1];
-//                    else if(splittedLine[0] == "generateOutput")
-//                        std::istringstream(splittedLine[1]) >> std::boolalpha >> param.generateOutput;
-                        //param.refFile = splittedLin[1];
-//                    else if(splittedLine[0] == "putMedian")
-//                        std::istringstream(splittedLine[1]) >> std::boolalpha >> param.putMedian;
-                        //param.refFile = splittedLin[1];
-//                    else if(splittedLine[0] == "summaryPlot")
-//                        std::istringstream(splittedLine[1]) >> std::boolalpha >> param.summaryPlot;
-                    else if(splittedLine[0] == "virion")
-                        std::istringstream(splittedLine[1]) >> std::boolalpha >> param.virion;
                 }
                 infile.close();
                 successful = true;
