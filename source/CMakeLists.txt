@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 20)
 INCLUDE_DIRECTORIES(.)
 
 
-add_executable(MIMEAnTo
+add_executable(MIMEAn2
         main.cpp
         ioTools.cpp
         ioTools.hpp
@@ -20,4 +20,4 @@ add_executable(MIMEAnTo
         utils.hpp)
 
 #for g++-9 this is not necessary, but it is for g++-8
-target_link_libraries(MIMEAnTo stdc++fs)
+target_link_libraries(MIMEAn2 stdc++fs)
