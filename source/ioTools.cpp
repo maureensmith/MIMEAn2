@@ -757,6 +757,13 @@ namespace ioTools {
             if(infile.good()) {
                 string line;
                 while(getline(infile, line)) {
+                    // remove line breaks for CR-LF-CRLF
+                    if(line.ends_with('\n')) {
+                        line.pop_back();
+                    }
+                    if(line.ends_with('\r')) {
+                            line.pop_back();
+                    }
                     vector<string> splittedLine = ioTools::split(line, '\t');
                     if(splittedLine.size() >= 2) {
                         if (splittedLine[0] == "refSeqFile")
