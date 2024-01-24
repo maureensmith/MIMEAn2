@@ -47,11 +47,11 @@ seqEnd	<seqEnd>
 percOfMaxCov	<percent_of_max_coverage>
 joinErrors	false
 signThreshold	<significance_value_threshold>
-selected <selected_wt_barcode_1>	<sample_name_1>	0
+selected	<selected_wt_barcode_1>	<sample_name_1>	0
 nonselected	<unselected_wt_barcode_1>	<sample_name_1>	0
 selected	<selected_barcode_1>	<sample_name_1>	<sample_id_1>
 nonselected	<unselected_barcode_1>	<sample_name_1>	<sample_id_1>
-[selected <selected_wt_barcode_2>	<sample_name_2>	0
+[selected	<selected_wt_barcode_2>	<sample_name_2>	0
 nonselected	<unselected_wt_barcode_2>	<sample_name_2>	0
 selected	<selected_barcode_2>	<sample_name_2>	<sample_id_2>
 nonselected	<unselected_barcode_2>	<sample_name_2>	<sample_id_2>]
