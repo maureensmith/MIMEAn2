@@ -35,13 +35,13 @@ and requires the following parameters
 config file with the name *project.txt* has to contain the following parameter, separated by tab:
 
 ```
-refSeqFile  </path/to/reference/sequence/ref.fasta>
-dataDir </directory/containing/count/files>
-alpha <significance_level>
-minimumNrCalls  <coverage>
-minNumberEstimatableKds <minEstimates>
-minSignal2NoiseStrength <s2n_threshold>
-minMutRate  <exponent_mutRate>
+refSeqFile	</path/to/reference/sequence/ref.fasta>
+dataDir	</directory/containing/count/files>
+alpha	<significance_level>
+minimumNrCalls	<coverage>
+minNumberEstimatableKds	<minEstimates>
+minSignal2NoiseStrength	<s2n_threshold>
+minMutRate	<exponent_mutRate>
 seqBegin	<seqStart>
 seqEnd	<seqEnd>
 percOfMaxCov	<percent_of_max_coverage>
